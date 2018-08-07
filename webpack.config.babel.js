@@ -1,5 +1,6 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { VueLoaderPlugin } from 'vue-loader';
 
 const resolve = file => path.resolve(__dirname, file);
 const isProd = process.argv.indexOf('-p') !== -1;
@@ -37,12 +38,13 @@ const config = {
       },
       {
         test: /\.vue$/,
-        use: 'vue-loader',
+        loader: 'vue-loader',
       },
     ],
   },
 
   plugins: [
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: resolve('src/index.html'),
       inject: true,

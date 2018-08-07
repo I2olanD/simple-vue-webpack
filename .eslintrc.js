@@ -8,7 +8,6 @@ module.exports = {
 
   env: {
     browser: true,
-    jest: true,
     es6: true,
   },
 
@@ -20,7 +19,7 @@ module.exports = {
 
   // check if imports actually resolve
   settings: {
-    'import/resolver': 'webpack',
+    'import/resolver': 'webpack'
   },
 
   // add your custom rules here
